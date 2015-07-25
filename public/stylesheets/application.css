@@ -1,0 +1,16 @@
+.action-panel {
+    clear: both;
+    padding: 15px;
+}
+
+.thumb {
+    max-height: 50px;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+}
+
+nav li:hover {
+    cursor: pointer;
+}

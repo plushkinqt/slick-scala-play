@@ -1,0 +1,41 @@
+<form action="/update" method="POST" class="form-horizontal" id="edit-cat-form" enctype="multipart/form-data">
+    <input name="id" type="hidden" id="hidden-id">
+    <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input name="name" type="text" class="form-control" id="inputName" placeholder="Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputColor" class="col-sm-2 control-label">Color</label>
+        <div class="col-sm-10">
+            <input name="color" type="text" class="form-control" id="inputColor" placeholder="Color">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputRace" class="col-sm-2 control-label">Race</label>
+        <div class="col-sm-10">
+            <input name="race" type="text" class="form-control" id="inputRace" placeholder="Race">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="selectGender" class="col-sm-2 control-label">Gender</label>
+        <div class="col-sm-10" id="selectGender">
+            <select name="gender" class="form-control" id="inputGender">
+                <option>Male</option>
+                <option>Feemale</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="InputFile" class="col-sm-2 control-label">File input</label>
+        <div class="col-sm-10">
+            <input name="picture" type="file" id="InputFile">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" id="super-edit-button">Submit</button>
+        </div>
+    </div>
+</form>

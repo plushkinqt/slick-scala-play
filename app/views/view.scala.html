@@ -1,0 +1,66 @@
+<h2>Detailed cat information</h2>
+
+<div class="pull-left">
+    <img id="thumb">
+</div>
+
+<div class="col-md-6 pull-left">
+    <table class="table" id="one-cat-table">
+        <tbody>
+            <tr id="name">
+                <td>Name: </td>
+                <td class="value"></td>
+            </tr>
+            <tr id="color">
+                <td>Color: </td>
+                <td class="value"></td>
+            </tr>
+            <tr id="race">
+                <td>Race: </td>
+                <td class="value"></td>
+            </tr>
+            <tr id="gender">
+                <td>Gender: </td>
+                <td class="value"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="action-panel">
+    <button type="button" class="btn btn-default" id="edit-cat-button">Edit</button>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
+            </div>
+            <div class="modal-body">
+                You will delete this cat permanently.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="total-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        $("#total-delete").click(function() {
+            $.ajax({
+                url: "/cat/" + $("#one-cat-table").attr("data-id"),
+                type: 'DELETE'
+            }).done(function(){
+                location.reload();
+            });
+        })
+        $("#edit-cat-button").click(function(){
+            loadEditCat($("#one-cat-table").attr("data-id"));
+        })
+    </script>
