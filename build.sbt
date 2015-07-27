@@ -14,7 +14,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % "3.0.0-RC1",
   //"mysql" % "mysql-connector-java" % "5.1.35",
   "org.slf4j" % "slf4j-nop" % "1.6.4",
-  "org.postgresql" % "postgresql" % "9.4-1200-jdbc41"
+  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
