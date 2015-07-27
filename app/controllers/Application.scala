@@ -50,7 +50,8 @@ class Application @Inject() (dao: DAOTrait) extends Controller {
    * This method returns data about all cats from database
    */
   def getCats = Action {
-    Ok(Json.toJson(dao.getAll))
+    val crap = dao.getAll
+    Ok(crap)
     //try {
       //Ok(Json.toJson(dao.getAll))
     //} catch {
