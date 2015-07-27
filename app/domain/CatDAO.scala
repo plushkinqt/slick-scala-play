@@ -28,7 +28,7 @@ class CatDAO extends DAOTrait{
 
   override def getAll : Seq[Cat] =
 
-    Await.result(db.run(cats.result), Duration(10000,"millis"))
+    Await.result(db.run(cats.result), Duration.Inf)
 
   override def findById(id: Int): Cat =
     Await.result (db.run (filterQuery (id).result.head), Duration.Inf)
