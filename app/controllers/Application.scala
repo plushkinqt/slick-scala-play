@@ -82,7 +82,7 @@ class Application @Inject() (dao: DAOTrait) extends Controller {
     request.body.file("picture").map { picture =>
       val filename = picture.filename
       val contentType = picture.contentType
-      picture.ref.moveTo(new File(s"/home/yevgen/activator-1.3.5-minimal/play-reactive-slick/public/images/$filename"))
+      picture.ref.moveTo(new File(s"assets/images/$filename"))
       filenameBuilder = Option("assets/images/" + filename)
       Ok("File uploaded")
     }.getOrElse {
@@ -113,7 +113,7 @@ class Application @Inject() (dao: DAOTrait) extends Controller {
     request.body.file("picture").map { picture =>
       val filename = picture.filename
       val contentType = picture.contentType
-      picture.ref.moveTo(new File(s"/home/yevgen/activator-1.3.5-minimal/play-reactive-slick/public/images/$filename"))
+      picture.ref.moveTo(new File(s"assets/images/$filename"))
       filenameBuilder = Option("assets/images/" + filename)
       Ok("File uploaded")
     }.getOrElse {
@@ -122,8 +122,7 @@ class Application @Inject() (dao: DAOTrait) extends Controller {
     }
     catForm.bindFromRequest.fold(
       formWithErrors => {
-        Ok("Some errors have occured")
-        //BadRequest(views.html.index())
+        BadRequest(views.html.index())
       },
       catData => {
         val editedKitty: Cat = models.CatModel.Cat(catData.id, catData.name, catData.color, catData.race, catData.gender, filenameBuilder)

@@ -1,6 +1,7 @@
 package models
 
-import slick.driver.MySQLDriver.api._
+//import slick.driver.MySQLDriver.api._
+import slick.driver.PostgresDriver.api._
 
 object CatModel {
 

@@ -2,9 +2,11 @@ package domain
 
 import com.google.inject.ImplementedBy
 import models.CatModel.{Cat, Cats}
-import slick.driver.MySQLDriver.api._
+//import slick.driver.MySQLDriver.api._
+import slick.driver.PostgresDriver.api._
 import scala.concurrent.{Await, Future}
 import scala.concurrent.duration.Duration
+import java.sql._;
 
 @ImplementedBy(classOf[CatDAO])
 trait DAOTrait {
@@ -19,7 +21,7 @@ class CatDAO extends DAOTrait{
 
   val cats : TableQuery[Cats] = TableQuery[Cats]
 
-  val db = Database.forConfig("mysqldb")
+  val db = Database.forConfig("postregsqldb")
 
   def filterQuery(id: Int): Query[Cats, Cat, Seq] =
     cats.filter(_.id === id)
