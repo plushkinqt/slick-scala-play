@@ -51,6 +51,7 @@ class Application @Inject() (dao: DAOTrait) extends Controller {
    */
   def getCats = Action {
     //try {
+
       Ok(Json.toJson(dao.getAll))
     //} catch {
     //  case e: Exception => InternalServerError("Some errors have occured while retriving all cats from database")
