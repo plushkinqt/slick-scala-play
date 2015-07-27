@@ -51,6 +51,10 @@ class Application @Inject() (dao: DAOTrait) extends Controller {
    */
   def getCats = Action {
     val crap = dao.getAll
+    crap onComplete {
+      case Right(posts) => Ok(crap)
+      case Left(t)  => Ok("totally not ok")
+    } 
     Ok(crap)
     //try {
       //Ok(Json.toJson(dao.getAll))
