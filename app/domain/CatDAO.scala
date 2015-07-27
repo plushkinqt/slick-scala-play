@@ -10,7 +10,7 @@ import java.sql._;
 
 @ImplementedBy(classOf[CatDAO])
 trait DAOTrait {
-  def getAll: Future[Seq[Cat]]
+  def getAll: Seq[Cat]
   def findById(id: Int): Cat
   def insert(cat: Cat): Unit
   def update(id: Int, cat: Cat): Unit
@@ -26,11 +26,11 @@ class CatDAO extends DAOTrait{
   def filterQuery(id: Int): Query[Cats, Cat, Seq] =
     cats.filter(_.id === id)
 
-  override def getAll : Future[Seq[Cat]] =
-  try{
-    db.run(cats.result)
-  }finally db.close()
-    //Await.result(db.run(cats.result), Duration.Inf)
+  override def getAll : Seq[Cat] =
+  //try{
+  //  db.run(cats.result)
+  //}finally db.close()
+    Await.result(db.run(cats.result), Duration.Inf)
 
   override def findById(id: Int): Cat =
     Await.result (db.run (filterQuery (id).result.head), Duration.Inf)
