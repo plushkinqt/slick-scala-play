@@ -1,1 +1,0 @@
--Dplay.evolutions.db.default.autoApply=true
