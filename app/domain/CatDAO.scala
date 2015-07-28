@@ -21,7 +21,7 @@ class CatDAO extends DAOTrait{
 
   val cats : TableQuery[Cats] = TableQuery[Cats]
 
-  val db = Database.forConfig("h2mem1")
+  val db = Database.forConfig("postregsqldb")
   //val db = Database.forURL("postgres://wnhdwpwbdrgsqf:Nwr9xQfhUDGHRccsVT9tEIuB7o@ec2-50-16-229-91.compute-1.amazonaws.com:5432/dti0r4dk2pvi7", "wnhdwpwbdrgsqf", "Nwr9xQfhUDGHRccsVT9tEIuB7o")
 
   def filterQuery(id: Int): Query[Cats, Cat, Seq] =
