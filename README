@@ -1,4 +1,4 @@
-This is your new Play application
+	Cat web manager 
 =================================
-
-This file will be packaged with your application, when using `activator dist`.
+This application is done with latest versions of Scala, Play Framework and Slick for back-end. HTML5, CSS and Javascript(jQuery) were used for front-end.
+Enjoy!
